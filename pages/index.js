@@ -1,20 +1,31 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
-import { Flex, Heading, Text } from "rebass";
+import { useEffect, useState } from "react";
+import { Button, Flex, Heading, Text } from "rebass";
 import { Box } from "rebass";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { colors } from "../data";
+import CopyIcon from "../components/icons/copy";
+import CheckIcon from "../components/icons/check";
+import { useIsCopied } from "../hooks/useIsCopied";
 
 const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
+const MotionButton = motion(Button);
 
 export default function Home() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [isCopied, setIsCopied] = useIsCopied(false);
 
   const updateColor = (color) => {
     setSelectedColor(color);
   };
+
+  const copyColor = (color) => {
+    navigator.clipboard.writeText(color.background);
+    setIsCopied(true);
+  };
+
   return (
     <Box
       minHeight={"100vh"}
@@ -62,6 +73,51 @@ export default function Home() {
               onClick={() => updateColor(color)}
             >
               <Text>{color.background}</Text>
+              <AnimatePresence>
+                {isCopied && selectedColor.id === color.id && (
+                  <MotionButton
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                    bg="transparent"
+                    style={{
+                      position: "absolute",
+                      right: "20px",
+                      top: "20px",
+                      cursor: "pointer",
+                      zIndex: 4,
+                    }}
+                  >
+                    <CheckIcon />
+                  </MotionButton>
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {!isCopied && (
+                  <MotionButton
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                    bg="transparent"
+                    onClick={() => copyColor(color)}
+                    style={{
+                      position: "absolute",
+                      right: "20px",
+                      top: "20px",
+                      cursor: "pointer",
+                      zIndex: 4,
+                    }}
+                  >
+                    <CopyIcon />
+                  </MotionButton>
+                )}
+              </AnimatePresence>
+
               {selectedColor.id === color.id && (
                 <MotionBox
                   layoutId="underline"
