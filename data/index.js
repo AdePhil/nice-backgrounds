@@ -1,22 +1,32 @@
 export const colors = [
   {
     id: 1,
-    name: "Bg1",
     background: "rgb(17, 24, 39)",
   },
   {
     id: 2,
-    name: "Bg2",
     background: "linear-gradient(180deg, #181823, #181823)",
   },
   {
     id: 3,
-    name: "Bg3",
     background: "#000",
   },
   {
     id: 4,
-    name: "Bg3",
     background: "#1f2028",
+  },
+  {
+    id: 5,
+    background:
+      "linear-gradient(to right, rgb(126, 34, 206), rgb(166, 95, 236))",
+  },
+  {
+    id: 6,
+    background:
+      "linear-gradient(to right, rgb(9, 135, 160), rgb(128, 90, 213))",
+  },
+  {
+    id: 7,
+    background: "rgb(17, 34, 64)",
   },
 ];

@@ -60,8 +60,7 @@ export default function Home() {
               layout
               key={color.id}
               height={"200px"}
-              p="20px"
-              bg={color.background}
+              p="25px"
               justifyContent="center"
               alignItems="center"
               color="white"
@@ -69,6 +68,7 @@ export default function Home() {
                 boxShadow: "0 0px 50px 0px rgba(0, 0, 0, 0.25)",
                 position: "relative",
                 cursor: "pointer",
+                background: color.background,
               }}
               onClick={() => updateColor(color)}
             >
