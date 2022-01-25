@@ -29,4 +29,13 @@ export const colors = [
     id: 7,
     background: "rgb(17, 34, 64)",
   },
+  {
+    id: 8,
+    background: "rgb(1, 22, 39)",
+  },
+
+  {
+    id: 9,
+    background: "rgb(19, 20, 23)",
+  },
 ];
