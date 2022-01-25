@@ -43,9 +43,20 @@ export default function Home() {
       style={{
         background: selectedColor.background,
       }}
+      px="20px"
     >
+      <Flex justifyContent="center" pt="40px">
+        <Heading
+          color="white"
+          textAlign="center"
+          fontSize={["30px", "40px", "60px"]}
+        >
+          Nice Backgrounds 🎨
+        </Heading>
+      </Flex>
       <Box
-        width="1000px"
+        maxWidth="1000px"
+        width="100%"
         py="60px"
         m="0 auto"
         sx={{
@@ -65,8 +76,8 @@ export default function Home() {
               justifyContent="center"
               alignItems="center"
               color="white"
-              boxShadow="0 0 0 10px rgba(0, 0, 0, 0.25)"
               style={{
+                boxShadow: "0 0px 50px 0px rgba(0, 0, 0, 0.25)",
                 position: "relative",
                 cursor: "pointer",
               }}
