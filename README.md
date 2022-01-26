@@ -1,6 +1,6 @@
 # Nice Backgrounds
 
-A curated list of nice dark backgrounds for your next project. Inspiration: I love dark mode.
+A curated list of nice backgrounds for your next project. Inspiration: I love dark mode.
 [visit website](http://nice-backgrounds.vercel.app/)
 
 ## Stack
