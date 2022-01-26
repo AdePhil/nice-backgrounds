@@ -41,6 +41,13 @@ export default function Home() {
       flexDirection={"column"}
       px="20px"
     >
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1"
+        />
+        <title>Nice Backgrounds 🎨</title>
+      </Head>
       <Box flex="1">
         <Flex justifyContent="center" pt="40px">
           <Heading
