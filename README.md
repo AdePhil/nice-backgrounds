@@ -17,9 +17,17 @@ $PROJECT_ROOT
 ├── pages
 │   # React component files
 ├── components
+│   # Non-react modules
+├── utils
 │   # Static files for images
 ├── public
 │   # Static data files
 ├── data
+│   # Custom react hooks
+├── hooks
+│   # React context files
+├── context
+│   # Library styles
+└── styles
 
 ```

@@ -1,20 +1,25 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button, Flex, Heading, Text } from "rebass";
 import { Box } from "rebass";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
-import { colors } from "../data";
+import { colorSamples } from "../data";
 import CopyIcon from "../components/icons/copy";
 import CheckIcon from "../components/icons/check";
 import { useIsCopied } from "../hooks/useIsCopied";
 import Footer from "../components/footer";
+import { v4 as uuidv4 } from "uuid";
 
 const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
 
 export default function Home() {
+  const colors = useMemo(
+    () => colorSamples.map((color) => ({ background: color, id: uuidv4() })),
+    []
+  );
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [isCopied, setIsCopied] = useIsCopied(false);
 
