@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <Flex justifyContent={"center"} py="20px">
       <Text textAlign={"center"} color="white">
-        Make with ❤️ by{" "}
+        Made with ❤️ by{" "}
         <Link href={"https://adebisiahmed.dev/"} style={{ color: "white" }}>
           Adephil
         </Link>
